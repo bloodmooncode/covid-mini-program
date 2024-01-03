@@ -1,0 +1,37 @@
+<view class="padding text-center">
+	<view class="padding-xl radius shadow bg-white text-xxl">
+		<text class="text-bold" style="color:#68C08B;">本次排班时段</text>
+		<view>
+			<view class="cu-form-group margin-top">
+				<view class="title">值班日期</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.datesend}}
+				</view>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">时段</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.time_begin}} - {{onduty.time_end}}
+				</view>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">地点</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.place}}
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="padding text-center">
+	<view class="padding radius shadow bg-white text-xxl">
+		<text class="text-bold" style="color:#68C08B;">详情须知</text>
+		<view class="padding">
+			<text>{{onduty.notice}}</text>
+		</view>
+		<view wx:if="{{onduty.imgList}}">
+		<text  class="text-bold" style="color:#68C08B;">图片点击可放大</text>
+		<image src="{{onduty.imgList}}" bindtap="showImg" class="padding" style="height: 1200rpx;"></image>
+		</view>
+	</view>
+</view>

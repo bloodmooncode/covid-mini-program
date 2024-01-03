@@ -1,0 +1,85 @@
+<!--pages/main/index.wxml-->
+
+<image src = "cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/envList.png" class="back" mode="widthFix"></image>
+
+<view class="header" >
+  <text class="news-title">最新消息</text>
+</view>
+
+<view class = "lists">
+  <view class = "news-item">
+    <text class="content01">寒风中，总有人为我们默默服务</text>
+    <view class = "detail">
+      <text class="content02">西北工业大学</text>
+      <text class="publish-time">2021-12-30    19：30</text>
+    </view>
+    <view class="container">
+     <!-- 分割线 -->
+    <view class="div-line"></view>
+    </view>
+  </view>
+
+  <view class = "news-item">
+    <text class="content01">西北工业大学全员核酸检测通知</text>
+    <view class = "detail">
+      <text class="content02">学校办公室</text>
+      <text class="publish-time">2021-12-30    12：30</text>
+    </view>
+    <view class="container">
+     <!-- 分割线 -->
+    <view class="div-line"></view>
+    </view>
+  </view>
+
+  <view class = "news-item">
+    <text class="content01">原创歌曲《逆风》--致敬无畏逆行的追光者</text>
+    <view class = "detail">
+      <text class="content02">学校办公室</text>
+      <text class="publish-time">2021-12-29    19：48</text>
+    </view>
+    <view class="container">
+     <!-- 分割线 -->
+    <view class="div-line"></view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="jump">
+
+<view class = "hortwo">
+
+  <navigator url="/pages/material-requirements/index" class = "functions01">
+    <image src="/images/goods.png" class="sourceimg"></image>
+  </navigator>
+
+  <navigator url="/pages/food-statistic/index" class = "functions01">
+    <image src="/images/food.png" class="sourceimg"></image>
+  </navigator>
+
+</view>
+
+
+<view class = "lowthree">
+  <navigator url="/pages/onDutyindex/onDutyindex" class = "functions02">
+    <image src="/images/volunteer.png" class="serveimg"></image>
+  </navigator>
+
+  <navigator url="/pages/info-aggregator/index" class = "functions02">
+    <image src="/images/info.png" class="serveimg"></image>
+  </navigator>
+
+  <navigator url="/pages/psychological-counseling/psy/index" class = "functions02">
+    <image src="/images/psychology.png" class="serveimg"></image>
+  </navigator>
+
+   <navigator url="/pages/volunteer-like/index" class = "functions02">
+    <image src="/images/like.png" class="serveimg"></image>
+   </navigator>
+</view>
+
+<view class = "logo">
+  <image src="/images/logo.png" class = "bottom-logo"></image>
+</view>
+</view>

@@ -1,0 +1,41 @@
+<!--pages/index/psy/index.wxml-->
+<view class="total-backcolor">
+  <view style="display: flex;flex-direction: column;margin-top: 30rpx;">
+    <view class="image-view">
+      <image class="image" src="./image/titleimage.png" mode="widthFix"></image>
+    </view>
+    <view style="display: flex;flex-direction: row; margin-top: 30rpx;">
+      <view class="right_view"></view>
+      <text class="title-text">预约咨询</text>
+    </view>
+    <view class="all-items" wx:for="{{consultantInfo}}" wx:for-key="_id">
+
+      <view class="item-view">
+        <view class="item-head-name">
+          <image class="item-image" src="{{item.avatar}}"></image>
+          <view style="display: flex;flex-direction: column;margin-left: 30rpx;">
+            <text style="font-weight: bold;">{{item.name}}</text>
+            <text style="margin-top:20rpx;width: 400rpx;">{{item.description}}</text>
+          </view>
+        </view>
+
+        <view style="display: flex;flex-direction: row;margin-top: 30rpx;">
+          <text style="color: #C8C8C8;">微信：{{item.wxid}}</text>
+          <text style="color: #C8C8C8; margin-left: 10rpx;">手机：{{item.phone}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    <view style="display: flex;flex-direction: row; margin-top: 30rpx;">
+      <view class="right_view"></view>
+      <text class="title-text">心理公开课</text>
+    </view>
+    <view class="all-items">
+      <view class="item-view">
+        <image class="image" src="{{publicClassInfo.poster}}" mode="widthFix"></image>
+      </view>
+
+    </view>
+  </view>
+</view>

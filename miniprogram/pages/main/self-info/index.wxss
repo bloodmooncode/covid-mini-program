@@ -1,0 +1,106 @@
+/* pages/info-aggregator/index.wxss */
+/* pages/profile/profile.wxss */
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#000;
+    margin-top: 200rpx;
+  }
+  
+  .userinfo-avatar{
+    overflow: hidden;
+    width: 230rpx;
+    height: 230rpx;
+    border-radius: 50%;
+  }
+  
+  .userBg{
+    width: 1200rpx;
+    height: 600rpx;
+    z-index: 0;
+    position: absolute;
+  }
+  
+  .BackGround{
+    vertical-align: top;
+  }
+  
+  .logo_img{
+    width: 44rpx;
+    height: 44rpx;
+  }
+  
+  .section{
+    margin-top: 20rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    margin-bottom: 40rpx;
+    height:80rpx;
+    border: 2rpx solid #DEDEDE;
+    border-radius: 50rpx;
+  }
+  
+  .input{
+    padding-left: 20rpx;
+    height: 88rpx; 
+  }
+  
+  .viewTitle{
+    margin-top: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 60rpx;
+  }
+  
+  .view-Name{
+
+    padding-left: 20rpx;
+    font-size: 40rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #66C18C;
+  }
+  
+  .save {
+    font-size: 50rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  .SaveBtn{
+    display: flex;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    margin-top: 30rpx;
+    height: 110rpx;
+    background: #66C18C;
+    border-radius: 100rpx;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120rpx;
+  }
+  
+  .ReturnBtn{
+    margin-top: 60rrpx;
+    background-color: F6F6F6;
+    font-size: 32rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  .main{
+    width: 100%;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .BackGround{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

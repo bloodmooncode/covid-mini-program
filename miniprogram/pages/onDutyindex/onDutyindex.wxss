@@ -1,0 +1,46 @@
+@import "../../style/main.wxss";
+@import "../../style/icon.wxss";
+
+.text-888 {
+  color: #888;
+}
+
+.img-warp {
+  width: 590rpx;
+  height: 164rpx;
+}
+
+.img-warp image {
+  width: 100%;
+  height: 100%;
+}
+
+.title1 {
+  padding: 20rpx 30rpx;
+  font-size: 12pt;
+  color: #353535;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title1 view::after {
+  display: inline-block;
+  content: '';
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 3rpx solid #353535;
+  border-right: 3rpx solid #353535;
+  transform: rotate(45deg);
+}
+.desc-text{
+  color: #FFFFFF!important;
+  font-weight: 800;
+}
+.index-title{
+  color: #FFFFFF!important;
+  font-size: 45rpx;	
+	font-weight: 900;
+	line-height: 100rpx;
+	padding: 0 30rpx;
+}

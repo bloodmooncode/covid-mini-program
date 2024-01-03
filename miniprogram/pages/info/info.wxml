@@ -1,0 +1,84 @@
+<view class="padding-xl radius shadow bg-white text-xl  text-center">
+    <view class="BackGround">
+        <image class="userBg" src="/Images/Profilebg.png" />
+    </view>
+    <view class="main">
+        <view class="userinfo ">
+            <block>
+                <view class="userinfo-avatar wxavatar" bindtap="bindViewTap">
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <view class="wxname">
+                    <open-data type="userNickName" style="font-size:40rpx;"></open-data>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="info-main padding">
+        <view class="flex duty-color">
+            <text class="cuIcon-my lg" style="margin: 10rpx;"></text>
+            <text>姓名</text>
+        </view>
+        <view class="input-item">
+            <input model:value="{{name}}" placeholder="请输入姓名" type="text" />
+        </view>
+        <view wx:if="{{show}}">
+            <view class="flex duty-color padding-top">
+                <text class="cuIcon-location lg" style="margin: 10rpx;"></text>
+                <text>学院</text>
+            </view>
+            <view class="input-item">
+                <!-- <input model:value="{{college}}" placeholder="请输入学院" type="text" /> -->
+
+                <picker bindchange="bindPickerChange" value="{{college}}" range="{{colleges}}">
+                    <view>{{colleges[college]}}</view>
+                </picker>
+            </view>
+            <view class="flex duty-color padding-top">
+                <text class="cuIcon-home lg" style="margin: 10rpx;"></text>
+                <text>宿舍楼</text>
+            </view>
+            <view class="input-item">
+                <!-- <input model:value="{{college}}" placeholder="请输入学院" type="text" /> -->
+                <picker bindchange="dormitoryChange" value="{{dormitory}}" range="{{dormitories}}">
+                    <view>{{dormitories[dormitory]}}</view>
+                </picker>
+            </view>
+            <view class="flex duty-color padding-top">
+                <text class="cuIcon-phone lg" style="margin: 10rpx;"></text>
+                <text>手机号</text>
+            </view>
+            <view class="input-item">
+                <input model:value="{{phone}}" placeholder="请输入手机号码" type="number" />
+            </view>
+            <view class="flex duty-color padding-top">
+                <text class="cuIcon-profile lg" style="margin: 10rpx;"></text>
+                <text>学号</text>
+            </view>
+            <view class="input-item">
+                <input model:value="{{stuid}}" placeholder="请输入学号" type="number" />
+            </view>
+            <view class="flex duty-color padding-top">
+                <text class="cuIcon-group lg" style="margin: 10rpx;"></text>
+                <text>身份证</text>
+            </view>
+            <view class="input-item">
+                <input model:value="{{sfid}}" placeholder="身份证号/护照号" type="text" />
+            </view>
+        </view>
+    </view>
+    <view class="padding flex flex-direction">
+        <button bindtap="updateUserInfo" class="cu-btn round bg-brown lg">保存修改</button>
+    </view>
+    <view wx:if="{{flag}}" class="padding-xs flex flex-direction">
+        <button bindtap="toIndex" class="cu-btn round bg-grey lg">返回首页</button>
+    </view>
+    <view class='margin-top-sm padding'>
+        <view class="text-sm">
+            <navigator url="./yinsi" hover-class="none">
+                使用本小程序就代表您同意了我们的
+                <view class="padding"><text class="text-blue  text-sm">《隐私协议》</text></view>
+            </navigator>
+        </view>
+    </view>
+</view>

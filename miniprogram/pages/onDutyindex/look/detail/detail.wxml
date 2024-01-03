@@ -1,0 +1,74 @@
+<view class="padding text-center">
+  <view class="padding-xl radius shadow bg-white text-xxl">
+    <text class="text-bold" style="color:#68C08B;">本次排班时段</text>
+    <view>
+      <view class="cu-form-group margin-top">
+        <view class="title">值班日期</view>
+        <view style="font-size: 30rpx;">
+          {{onduty.datesend}}
+        </view>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">时段</view>
+        <view style="font-size: 30rpx;">
+          {{onduty.time_begin}} - {{onduty.time_end}}
+        </view>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">地点</view>
+        <view style="font-size: 30rpx;">
+          {{onduty.place}}
+        </view>
+      </view>
+      <view class="cu-form-group" wx:if="{{onduty.dormitory!=0}}">
+        <view class="title">宿舍楼</view>
+        <view style="font-size: 30rpx;">
+          {{dormitories[onduty.dormitory]}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="padding text-center">
+  <view class="padding radius shadow bg-white text-xxl">
+    <text class="text-bold" style="color:#68C08B;">报名详情</text>
+    <view>
+      <view class="cu-list menu card-menu">
+        <view class='cu-item content title2' data-id="0" catchtap='rotateAnim'>
+          <text class="text-888  text-lg text-left">查看报名人详情({{onduty.count}}/{{onduty.information_desk.limit}}人)</text>
+          <view style='transform:rotate({{degs[0]}}deg);transition:all 0.4s;'></view>
+        </view>
+        <view class='text-black  text-lg text-left' style="padding: 25rpx;" hidden='{{degs[0]==0}}'>
+          <view class="col-3">
+            <view wx:key="index" wx:for="{{onduty.information_desk.member}}" class="cu-tag round padding margin-tb" style="margin-left: 10rpx;">{{item.nickname}}
+              <text wx:if="{{captain}}" data-name="{{item}}" data-work="information_desk" bindtap="delettag" class="cuIcon-close" style="margin-left: 10rpx;"></text>
+            </view>
+            <view wx:if="{{captain}}" class="cu-tag round padding margin-tb" style="margin-left: 10rpx;" data-target="viewModal">
+              <input style="width:50px" value="{{value}}" data-work="information_desk" confirm-type="done" bindconfirm="add_member" placeholder="添加"></input>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{captain}}">
+      <view class="padding flex flex-direction">
+        <button open-type="share" class="cu-btn line-brown lg">分享给朋友</button>
+      </view>
+
+      <view wx:if="{{!onduty.progress}}" class="padding flex flex-direction">
+        <button bindtap="reopen" class="cu-btn line-brown lg">恢复进行状态</button>
+      </view>
+      <view wx:if="{{!onduty.progress}}" class="padding flex flex-direction">
+        <button bindtap="sendMessage" class="cu-btn line-brown lg">发送订阅消息</button>
+      </view>
+      <view wx:if="{{onduty.progress}}" class="padding flex flex-direction">
+        <button bindtap="finish" class="cu-btn line-brown lg">结束报名</button>
+      </view>
+      <view class="padding flex flex-direction">
+        <button bindtap="excel" class="cu-btn line-brown lg">生成表格</button>
+      </view>
+    </view>
+
+
+  </view>
+</view>

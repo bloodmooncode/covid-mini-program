@@ -1,0 +1,37 @@
+.box {
+  display: block;
+  flex-direction: column;
+}
+
+.image-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750rpx;
+  height: 300rpx;
+  flex-direction: column;
+}
+
+.image-style {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.div-view {
+  width: 750rpx;
+  height: 2rpx;
+  background-color: #ECDDDD;
+}
+
+.image-text {
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100rpx;
+}

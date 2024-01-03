@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="nav_top">
+    <block wx:for="{{cateItems}}" wx:key="id">
+      <view class="nav_top_items {{curNav == item.cateId ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cateId}}">{{item.cateName}}</view>
+    </block>
+  </view>
+
+  <view class="nav_down_finding" hidden="{{curNav!=1}}">
+    <view class='box' wx:for="{{onCheckingList}}" wx:key="_id" wx:for-index="index">
+      <view class="info">
+        <view class="type">{{item.type}}</view>
+        <view class="text-box">
+          <text class="text">{{item.text}}</text>
+        </view>
+        <view class="image-box">
+          <image wx:for="{{item.image}}" wx:for-item="img" class="image" src="{{img}}" wx:key="index" bindtap="preview"
+          wx:for-index="imageIndex" data-index="{{index}}" data-imageIndex="{{imageIndex}}" data-option="onChecking"></image>
+        </view>
+        <view class="contact-box">
+          <text class="contact">联系方式：{{item.contact}}</text>
+        </view>
+        <view class="date-box">
+          <text class="date">{{item.submitDate}}</text>
+        </view>
+      </view>
+      <view class="btn-box">
+        <view class="btn refuse" bindtap="check" data-option="-1" data-index="{{index}}">拒绝通过</view>
+        <view class="btn pass" bindtap="check" data-option="1" data-index="{{index}}">审核通过</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav_down_finding" hidden="{{curNav!=2}}">
+    <view class='box' wx:for="{{checkedList}}" wx:key="_id" wx:for-index="index">
+      <view class="info">
+        <view class="type">{{item.type}}</view>
+        <view class="text-box">
+          <text class="text">{{item.text}}</text>
+        </view>
+        <view class="image-box">
+          <image wx:for="{{item.image}}" wx:for-item="img" class="image" src="{{img}}" wx:key="index" bindtap="preview"
+          wx:for-index="imageIndex" data-index="{{index}}" data-imageIndex="{{imageIndex}}" data-option="checked"></image>
+        </view>
+        <view class="contact-box">
+          <text class="contact">联系方式：{{item.contact}}</text>
+        </view>
+        <view class="date-box">
+          <text class="date">{{item.submitDate}}</text>
+        </view>
+      </view>
+      <view class="btn-box">
+        <view class="btn refuse" bindtap="delete" data-index="{{index}}" data-option="checked">删除</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav_down_finding" hidden="{{curNav!=3}}">
+    <view class='box' wx:for="{{refusedList}}" wx:key="_id" wx:for-index="index">
+      <view class="info">
+        <view class="type">{{item.type}}</view>
+        <view class="text-box">
+          <text class="text">{{item.text}}</text>
+        </view>
+        <view class="image-box">
+          <image wx:for="{{item.image}}" wx:for-item="img" class="image" src="{{img}}" wx:key="index" bindtap="preview"
+          wx:for-index="imageIndex" data-index="{{index}}" data-imageIndex="{{imageIndex}}" data-option="refused"></image>
+        </view>
+        <view class="contact-box">
+          <text class="contact">联系方式：{{item.contact}}</text>
+        </view>
+        <view class="date-box">
+          <text class="date">{{item.submitDate}}</text>
+        </view>
+      </view>
+      <view class="btn-box">
+        <view class="btn refuse" bindtap="delete" data-index="{{index}}" data-option="refused">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

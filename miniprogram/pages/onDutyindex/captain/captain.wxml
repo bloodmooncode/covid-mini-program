@@ -1,0 +1,156 @@
+<view class="padding text-center">
+  <view class="padding-xl radius shadow bg-white text-xxl" wx:if="{{captain}}">
+    <text wx:if="{{!submit}}" class="text-bold margin-bottom" style="color:#68C08B;">发布排班</text>
+    <!-- <view class="text-lg text-grey padding-top"><text>仅能同时发布一个班次</text></view>  -->
+    <view>
+      <form bindsubmit="submit">
+        <picker name="date" mode="date" value="{{date}}" start="2021-12-01" end="2022-12-31" bindchange="dateChange">
+          <view class="group">
+            <view class="title">日期选择</view>
+            <view class="picker">
+              {{date}}
+            </view>
+          </view>
+        </picker>
+
+
+        <picker mode="time" value="{{time_begin}}" start="00:00" end="23:59" bindchange="TimeChange" data-pickertype='begin'>
+          <view class="group">
+            <view class="title">开始时间</view>
+            <view class="picker">
+              {{time_begin}}
+            </view>
+          </view>
+        </picker>
+
+        <picker mode="time" value="{{timeEnd}}" start="00:00" end="23:59" bindchange="TimeChange" data-pickertype='end'>
+          <view class="group">
+            <view class="title">结束时间</view>
+            <view class="picker">
+              {{time_end}}
+            </view>
+          </view>
+        </picker>
+
+        <!-- <picker name="interval" bindchange="intervalChange" value="{{interval}}" range="{{interval_picker}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">时段</view>
+                            {{interval}}
+                        </view>
+                    </view>
+                </picker> -->
+        <picker name="information_desk" bindchange="information_deskChange" value="{{information_desk}}" range="{{number}}">
+          <view class="picker">
+            <view class="group">
+              <view class="title">人数</view>
+              {{information_desk}}人
+            </view>
+          </view>
+        </picker>
+        <!-- <input model:value="{{stuid}}" placeholder="人数" type="number" /> -->
+        <!-- <picker bindchange="placeChange" value="{{place}}"
+                    range="{{placeArr}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">地点</view>
+                            {{place}}
+                        </view>
+                    </view>
+                </picker> -->
+        <!-- 地点 -->
+        <view style="margin: 0 30rpx;">
+          <view class="picker">
+            <view class="group">
+              <view class="title">地点</view>
+              <view class="place-input">
+                <input model:value="{{place}}" placeholder="输入地点" type="text" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <picker bindchange="dormitoryChange" value="{{dormitory}}" range="{{dormitories}}">
+          <view class="picker">
+            <view class="group">
+              <view class="title">限制(非必选)</view>
+              {{dormitories[dormitory]}}
+            </view>
+          </view>
+        </picker>
+        <view class="cu-bar bg-white margin-top">
+          <view class="action">
+            图片上传（在推送中显示）
+            <!-- <image src="cloud://cloud1-0gex1p2d827cce36.636c-cloud1-0gex1p2d827cce36-1308935795/2021,12,2422,21,25.png"></image> -->
+          </view>
+          <view class="action">
+            最多一张
+          </view>
+        </view>
+        <view class="cu-form-group">
+          <view class="grid col-4 grid-square flex-sub">
+            <view class="bg-img" bindtap="ViewImage" data-url="{{imgList}}" wx:if="{{imgList.length>0}}">
+              <image style="left: 0;" src='{{imgList}}' mode='aspectFill'></image>
+              <view class="cu-tag bg-red" catchtap="DelImg">
+                <text class="cuIcon-close"></text>
+              </view>
+            </view>
+            <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+              <text class="cuIcon-cameraadd"></text>
+            </view>
+          </view>
+        </view>
+        <view>
+          备注信息
+        </view>
+        <view class="cu-form-group margin-top">
+          <textarea maxlength="-1" value="{{text_input}}" bindinput="textareaAInput" placeholder="备注信息"></textarea>
+        </view>
+        <!-- <picker name="expostor_desk" bindchange="expostor_deskChange" value="{{expostor_desk}}" range="{{number}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">一码通扫描</view>
+                            {{expostor_desk}}人
+                        </view>
+                    </view>
+                </picker>
+                <picker name="expose_robot" bindchange="expose_robotChange" value="{{expose_robot}}" range="{{number}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">网络维护</view>
+                            {{expose_robot}}人
+                        </view>
+                    </view>
+                </picker>
+                <picker name="teenager_learn" bindchange="teenager_learnChange" value="{{teenager_learn}}" range="{{number}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">餐饮保障</view>
+                            {{teenager_learn}}人
+                        </view>
+                    </view>
+                </picker>
+                <picker name="hall_desk" bindchange="hall_deskChange" value="{{hall_desk}}" range="{{number}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">志愿者管理</view>
+                            {{hall_desk}}人
+                        </view>
+                    </view>
+                </picker>
+                <picker name="expostor" bindchange="expostorChange" value="{{expostor}}" range="{{number}}">
+                    <view class="picker">
+                        <view class="group">
+                            <view class="title">机动志愿者</view>
+                            {{expostor}}人
+                        </view>
+                    </view>
+                </picker> -->
+        <button wx:if="{{!submit}}" class="cu-btn line-brown lg" form-type="submit" style="width:100%;">发布</button>
+        <button wx:if="{{submit}}" open-type="share" class="cu-btn line-brown lg" style="width:100%;">分享给朋友</button>
+      </form>
+    </view>
+  </view>
+  <view class="padding-xl radius shadow bg-white text-xxl" wx:if="{{!captain}}">
+    <text wx:if="{{!submit}}" class="text-bold margin-bottom" style="color:#68C08B;">暂无信息</text>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="box">
+  <view class="image-view" bindtap="linkToInfo" data-type="群聊汇总">
+    <image class="image-style" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/chat.png"></image>
+    <text class="image-text">群聊汇总</text>
+  </view>
+  <view class="div-view"></view>
+
+  <view class="image-view" bindtap="linkToInfo" data-type="紧急联系方式">
+    <image class="image-style" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/emergency.png"></image>
+    <text class="image-text">紧急联系方式</text>
+  </view>
+  <view class="div-view"></view>
+
+  <view class="image-view" bindtap="linkToInfo" data-type="爱心捐赠">
+    <image class="image-style" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/donaton.png"></image>
+    <text class="image-text">爱心捐赠</text>
+  </view>
+  <view class="div-view"></view>
+
+  <view class="image-view" bindtap="linkToInfo" data-type="其他">
+    <image class="image-style" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/others.png"></image>
+    <text class="image-text">其他</text>
+  </view>
+  <view class="div-view"></view>
+  <view class="btn-box">
+    <button bindtap="linkToPublish" style="background-color: #9805a1;width: 600rpx;color: #ffffff;height: 100rpx;align-items: center;line-height:70rpx;border-radius: 20rpx;">信息发布</button>
+    <button style="width: 600rpx;margin: 50rpx;height: 100rpx;align-items: center;line-height:70rpx;border-radius: 20rpx;color: #9805a1;border: 1px solid #9805a1;background-color: #ffffff;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{!isAdmin}}">管理员验证</button>
+    <button style="width: 600rpx;margin: 50rpx;height: 100rpx;align-items: center;line-height:70rpx;border-radius: 20rpx;color: #9805a1;border: 1px solid #9805a1;background-color: #ffffff;" bindtap="linkToManage" wx:if="{{isAdmin}}">信息审核</button>
+  </view>
+</view>

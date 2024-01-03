@@ -1,0 +1,40 @@
+<view class="padding text-center">
+	<view class="padding-xl radius shadow bg-white text-xxl">
+		<text class="text-bold" style="color:#68C08B;">志愿者招募</text>
+		<view>
+			<view class="cu-form-group margin-top">
+				<view class="title">值班日期</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.datesend}}
+				</view>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">时段</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.time_begin}} - {{onduty.time_end}}
+				</view>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">地点</view>
+				<view style="font-size: 30rpx;">
+					{{onduty.place}}
+				</view>
+			</view>
+			<view class="cu-form-group" wx:if="{{onduty.dormitory!=0}}">
+				<view class="title">宿舍楼</view>
+				<view style="font-size: 30rpx;">
+					{{dormitories[onduty.dormitory]}}
+				</view>
+			</view>
+		</view>
+		<view class="padding text-xsl">
+			<text style="color: #68C08B;">{{onduty.count}}</text>/{{onduty.information_desk.limit}}
+		</view>
+		<view class="padding flex flex-direction">
+			<button wx:if="{{!work}}" bindtap="getWork" class="cu-btn round bg-brown lg" disabled="{{dormitoryLimit||dlDisabled||work||onduty.count>=onduty.information_desk.limit}}" data-count="{{onduty.information_desk.limit}}">立即报名</button>
+			<!-- <button wx:if="{{work}}" bindtap="resetWork" class="cu-btn line-brown text-bold lg">放弃报名</button> -->
+			<view wx:if="{{work}}">报名成功!</view>
+		</view>
+	</view>
+</view>
+

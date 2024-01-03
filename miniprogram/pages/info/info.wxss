@@ -1,0 +1,77 @@
+@import "../../style/main.wxss";
+@import "../../style/icon.wxss";
+
+/* page{
+    background-color: #F1F1F1;
+}
+.info-warp{
+    margin: 30rpx;
+}
+.info-contaienr{
+    background-color: #fff;
+    min-height: 300rpx;
+    box-shadow: 0 0 5px 5px #111;
+} */
+.title{
+    font-size: 50rpx;
+}
+.wxavatar {
+    overflow: hidden;
+    display: block;
+    width: 230rpx;
+    height: 230rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.input-item{
+    border: 1rpx solid #aaaaaa;
+    padding: 5px;
+    border-radius: 5000px;
+    margin-top: 25rpx;
+}
+.duty-color{
+    color:#68C08B;
+    font-weight: 500;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#000;
+    margin-top: 200rpx;
+  }
+  
+  .userinfo-avatar{
+    overflow: hidden;
+    width: 230rpx;
+    height: 230rpx;
+    border-radius: 50%;
+  }
+  
+  .userBg{
+    width: 1200rpx;
+    height: 600rpx;
+    z-index: 0;
+    position: absolute;
+    max-width: 300%;
+  }
+  
+  .BackGround{
+    vertical-align: top;
+  }
+  
+  .main{
+    width: 100%;
+    z-index: 1;
+    position: relative;
+  }
+  .BackGround{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,88 @@
+<!--pages/info-aggregator/index.wxml-->
+        <!--index.wxml-->
+<scroll-view>
+  
+    <view class="BackGround">
+      <image class="userBg" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/Profilebg.png"/>
+    </view>
+
+
+<view class="main">
+  <view class="userinfo">
+      <block wx:if="{{canIUseOpenData}}">
+        <view class="userinfo-avatar" bindtap="bindViewTap">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data type="userNickName"></open-data>
+      </block>
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取头像昵称</button>
+        <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+        <view wx:else>请使用1.4.4及以上版本基础库</view>
+      </block>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  <!--pages/index/Component/TextInput/TextInput.wxml-->
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/geren.svg"></image>
+    <text class="view-Name">姓名</text>
+  </view>
+  <view class="section">
+    <input class="input" type="text" placeholder-style="font-size:15px" auto-focus/>
+  </view>
+
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/major.svg"></image>
+    <text class="view-Name">学院</text>
+  </view>
+  <view class="section">
+    <input class="input" type="text" placeholder-style="font-size:15px"/>
+  </view>
+
+
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/domain.svg"></image>
+    <text class="view-Name">宿舍楼</text>
+  </view>
+  <view class="section">
+    <input class="input" type="text" placeholder-style="font-size:15px" auto-focus/>
+  </view>
+
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/xuehao.svg"></image>
+    <text class="view-Name">学号</text>
+  </view>
+  <view class="section">
+    <input class="input" type="number"/>
+  </view>
+
+
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/dianhua.svg"></image>
+    <text class="view-Name">手机</text>
+  </view>
+  <view class="section">
+    <input class="input" type="number"/>
+  </view>
+
+
+  <view class="viewTitle">
+    <image class="logo_img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/idCard.svg"></image>
+    <text class="view-Name">身份证</text>
+  </view>
+  <view class="section">
+    <input class="input" type="idcard"/>
+  </view>
+
+<view class= "SaveBtn">
+  <button>
+    <text class = "save">保存修改</text>
+  </button>
+</view>
+  
+  <button class="ReturnBtn">返回首页</button>
+</view>
+</scroll-view>

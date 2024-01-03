@@ -1,0 +1,22 @@
+{
+  "name": "yq-mini",
+  "version": "0.0.0",
+  "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
+  "scripts": {
+    "prepare": "npx husky install",
+    "lint": "eslint miniprogram cloudfunctions --fix",
+    "lintfix": "eslint miniprogram cloudfunctions --fix",
+    "commit-check": "node script/commitCheck.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://e.coding.net/npu-devhub/yiqingfangkongxiaochengxu/main-mini-program.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "4.0.0",
+    "eslint": "^8.5.0",
+    "husky": "^7.0.4"
+  }
+}

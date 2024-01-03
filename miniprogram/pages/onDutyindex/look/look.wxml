@@ -1,0 +1,21 @@
+<view class="padding text-center">
+	<view class="padding-xl radius shadow bg-white text-xl">
+		<view class="text-xxl padding-bottom"><text class="text-bold" style="color:#68C08B;">排班管理</text></view>
+		{{team}}
+		<view wx:if="{{!groupdate.length==0}}" class="cu-list menu card-menu padding-top">
+		<navigator wx:for="{{groupdate}}" url="/pages/onDutyindex/look/detail/detail?_id={{item._id}}"  wx:key="index">
+		
+					<view  class='cu-item content title'>
+				<text wx:if="{{!item.progress}}" class="cuIcon-check lg text-green"></text>
+				<text wx:else class="cuIcon-activityfill lg text-brown"></text>
+				<text class="text-888  text-lg text-left">{{item.datesend}} {{item.time_begin}} - {{item.time_end}}</text>
+				<!-- 下面那条线可以加判断 -->
+				<view style='transform:rotate(0deg);transition:all 0.4s;'></view>
+			</view>
+		
+		</navigator>
+
+		</view>
+		<view wx:else class="padding-xl text-xxl">暂无排班任务</view>
+	</view>
+</view>

@@ -1,0 +1,17 @@
+<view class='box'  wx:for="{{allList}}" wx:key="_id" wx:for-index="index">
+  <view class="info">
+    <view class="text-box">
+      <text class="text">{{item.text}}</text>
+    </view>
+    <view class="image-box">
+      <image wx:for="{{item.image}}" wx:for-item="img" class="image" src="{{img}}" 
+      bindtap="preview" wx:for-index="imageIndex" data-index="{{index}}" data-imageIndex="{{imageIndex}}"></image>
+    </view>
+    <view class="contact-box">
+      <text class="contact">联系方式：{{item.contact}}</text>
+    </view>
+    <view class="date-box">
+      <text class="date">{{item.submitDate}}</text>
+    </view>
+  </view>
+</view>

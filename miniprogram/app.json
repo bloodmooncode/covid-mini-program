@@ -1,0 +1,33 @@
+{
+    "pages": [
+        "pages/main/index",
+        "pages/food-statistic/index",
+        "pages/material-requirements/index",
+        "pages/psychological-counseling/index",
+        "pages/psychological-counseling/psy/index",
+        "pages/main/self-info/index",
+        "pages/volunteer-like/index",
+        "pages/info-aggregator/index",
+        "pages/info-aggregator/info-publish/index",
+        "pages/info-aggregator/info-manage/index",
+        "pages/info-aggregator/info-manage/info/index",
+        "pages/onDutyindex/onDutyindex",
+        "pages/onDutyindex/captain/captain",
+        "pages/onDutyindex/signup/signup",
+        "pages/onDutyindex/look/look",
+        "pages/onDutyindex/look/detail/detail",
+        "pages/info/info",
+        "pages/onDutyindex/look/show/show",
+        "pages/info/yinsi",
+        "pages/file-download/index"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "疫情防控小程序",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

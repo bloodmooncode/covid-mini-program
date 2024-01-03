@@ -1,0 +1,85 @@
+<view wx:if="{{captain}}" class="text-center" style="padding: 40rpx;">
+	<view class="padding-xl radius shadow bg-white text-xl">
+		<view style="font-weight: 900;font-size: 40rpx;">
+			{{team}}
+		</view>
+		<view class="padding text-lg">管理员：{{name}}
+		</view>
+		<view class="padding flex flex-direction">
+			<button bindtap="tocaptain" class="cu-btn round bg-brown lg">发布排班</button>
+		</view>
+		<view class="padding flex flex-direction">
+			<button bindtap="tolook" class="cu-btn round bg-brown lg">查看已发布班次</button>
+		</view>
+		<view class="padding flex flex-direction">
+			<button bindtap="toInfo" class="cu-btn round bg-brown lg">我的信息</button>
+		</view>
+	</view>
+</view>
+<view class="padding text-center" style="padding: 40rpx;" wx:else>
+	<view class="padding-xl radius shadow bg-white text-xl">
+		<view style="font-weight: 900;font-size: 40rpx;">
+			{{team}}
+		</view>
+		<view class="padding text-lg">志愿者：{{name}}
+		</view>
+		<view class="padding flex flex-direction">
+			<button bindtap="toInfo" class="cu-btn round bg-brown lg">个人信息</button>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+<view wx:if="{{!groupdate.length==0}}" class="cu-list menu card-menu">
+	<navigator wx:for="{{groupdate}}" url="/pages/onDutyindex/signup/signup?_id={{item._id}}" wx:key="index">
+		<!-- <view class='cu-item content title1'>
+					<text class="cuIcon-activityfill lg text-brown"></text>
+					<text class="text-888  text-lg text-left">{{item.datesend}} {{item.time_begin}} - {{item.time_end}}</text>
+					<view style='transform:rotate(0deg);transition:all 0.4s;'></view>
+				</view> -->
+		<view class="cu-card article">
+			<view class="cu-item shadow padding" style="background-color: #68C08B;">
+				<view class="content">
+					<view class="desc flex" style="flex-direction: row; ">
+						<view class="text-content desc-text">正在报名...</view>
+						<!-- <view class="text-content desc-text">30人</view>	 -->
+					</view>
+				</view>
+				<view class="index-title">
+					<view class="text-cut ">{{item.place}}</view>
+				</view>
+				<view class="content">
+					<view class="desc flex" style="flex-direction: row; ">
+						<view class="text-content desc-text">{{item.datesend}} {{item.time_begin}} - {{item.time_end}}</view>
+						<!-- <view class="text-content desc-text">30人</view>	 -->
+					</view>
+				</view>
+			</view>
+		</view>
+	</navigator>
+</view>
+<!-- <view wx:else class="padding-xl text-xxl">暂无志愿服务</view> -->
+<view class="padding text-center" style="padding: 40rpx;" wx:else>
+	<view class="padding-xl radius shadow bg-white text-xl">
+		<view style="font-weight: 900;font-size: 40rpx;">
+			暂无志愿服务
+		</view>
+	</view>
+</view>
+
+
+<!-- <view class="padding text-center">
+	<view class="padding-xl radius shadow bg-white text-xl">
+		{{team}}
+		<view class="img-warp">
+			<image src="https://636c-cloud1-0gex1p2d827cce36-1308935795.tcb.qcloud.la/title.gif?sign=81df30a281b0521c3c70d510bcaa670a&t=1640355612"></image>
+		</view>
+		<view style="margin-top: 20rpx;">
+			{{team}}
+		</view>
+
+	</view>
+</view> -->

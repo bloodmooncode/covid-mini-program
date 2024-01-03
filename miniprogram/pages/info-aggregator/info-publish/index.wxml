@@ -1,0 +1,44 @@
+<view class="box">
+  <view class="title-warp">
+    <text>发布信息</text>
+  </view>
+  <view>
+    <view class="name">类别</view>
+    <view class="grid col-2">
+      <view class="tag-box" wx:for="{{types}}" wx:key="*this">
+        <view
+                class="tag"
+                data-type="{{item}}"
+                bindtap="setType"
+                style="background-color: {{type === item ? '#9805a1' : 'white'}} ; color:{{type === item ? 'white' : ''}};"
+        >
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="name">详情</view>
+    <view class="text">
+      <textarea style="width: 100%;" bindinput="setText" placeholder="信息描述，上传图片"></textarea>
+    </view>
+    <view class="grid col-3 grid-square flex-sub img">
+      <view wx:for="{{imgList}}" wx:key="*this">
+        <image class="col-image" src="{{item}}" mode="aspectFill"></image>
+        <view bindtap="delImg" data-index="{{index}}">
+          <image class="delete-img" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/delete.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="solids" bindtap="chooseImage" wx:if="{{imgList.length<9}}">
+        <image class="col-image" src="cloud://online-1g92hfy633c6a119.6f6e-online-1g92hfy633c6a119-1309017282/info-aggregator/add.png"></image>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="name">联系方式</view>
+    <view class="text">
+      <input type="number" bindinput="setContact" placeholder="手机号码"></input>
+    </view>
+  </view>
+  <button class="btn" style="width: 100%;" bindtap="submit">提交审核</button>
+</view>
